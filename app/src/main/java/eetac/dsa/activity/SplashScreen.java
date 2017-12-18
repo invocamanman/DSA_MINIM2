@@ -1,12 +1,9 @@
 package eetac.dsa.activity;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -23,7 +20,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class EmptyActivity extends AppCompatActivity
+public class SplashScreen extends AppCompatActivity
 {
     private static final String TAG = Main.class.getSimpleName();
     private static Retrofit retrofit = null;
@@ -54,9 +51,9 @@ public class EmptyActivity extends AppCompatActivity
         Picasso.with(this)
                 .load("https://cms-assets.tutsplus.com/uploads/users/21/posts/19431/featured_image/CodeFeature.jpg")
                 .into(imageView);
-        //try { Thread.sleep(5000); }
+        try { Thread.sleep(2000); }
 
-        //catch (InterruptedException ex) { android.util.Log.d("YourApplicationName", ex.toString()); }
+        catch (InterruptedException ex) { android.util.Log.d("YourApplicationName", ex.toString()); }
     }
     public void IniciarSesion()
     {
@@ -79,7 +76,7 @@ public class EmptyActivity extends AppCompatActivity
                 int key = response.body().getKey();
                 if(key == 0)
                 {
-                    Intent intent = new Intent(EmptyActivity.this, Main.class);
+                    Intent intent = new Intent(SplashScreen.this, Main.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     return;
@@ -90,7 +87,7 @@ public class EmptyActivity extends AppCompatActivity
                 Toast toast = Toast.makeText(getApplicationContext(), "Bienvenido  "+usuario.toString(), Toast.LENGTH_SHORT);
                 toast.show();
 
-                Intent intent = new Intent(EmptyActivity.this, MainMenu.class);
+                Intent intent = new Intent(SplashScreen.this, MainMenu.class);
                 intent.putExtra("key", key);
                 intent.putExtra("usuario", usuario);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
