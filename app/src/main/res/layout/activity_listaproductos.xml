@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/NombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/buscar_usuario"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textCursorDrawable="@null"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textplainmontruos"
+        app:layout_constraintEnd_toStartOf="@+id/Consultar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Consultar"
+        android:layout_width="91dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/btnAceptar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/NombreUsuario"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/ListaMonstruos"
+        android:layout_width="359dp"
+        android:layout_height="341dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textplainmontruos" />
+
+    <TextView
+        android:id="@+id/textplainmontruos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="29dp"
+        android:text="Lista de productos"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/ListaMonstruos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Consultar" />
+</android.support.constraint.ConstraintLayout>
